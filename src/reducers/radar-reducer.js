@@ -14,6 +14,11 @@ const initialState = {
       ring: "ADOPT",
     },
     {
+      label: "redux-saga",
+      quadrant: "Languages&Frameworks",
+      ring: "ADOPT",
+    },
+    {
       label: "Atomic Design",
       quadrant: "Techniques",
       ring: "ADOPT",
@@ -24,9 +29,19 @@ const initialState = {
       ring: "ADOPT",
     },
     {
+      label: "Storybook",
+      quadrant: "Tools",
+      ring: "ADOPT",
+    },
+    {
+      label: "webpack-serve",
+      quadrant: "Tools",
+      ring: "ASSESS",
+    },
+    {
       label: "Netlify",
       quadrant: "Platforms",
-      ring: "ADOPT",
+      ring: "TRIAL",
     },
   ],
   width: 1450,
@@ -55,5 +70,8 @@ const initialState = {
 export default handleActions({
   [Actions.setRadar]: (state, action) => ({
     ...state, ...action.payload
-  })
+  }),
+  [Actions.setUpdated]: (state, action) => ({
+    ...state, version: (state.version || 0) + 1
+  }),
 }, initialState)

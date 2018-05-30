@@ -14,7 +14,7 @@ const EntryTableWrapper = styled.div`
 const RadarWrapper = styled.div`
   flex: 1;
   & > div {
-    transform: scale(.5);
+    transform: scale(.75);
     transform-origin: 0 0;
   }
 `

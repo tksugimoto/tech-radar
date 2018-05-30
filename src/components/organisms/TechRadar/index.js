@@ -386,7 +386,6 @@ function radar_visualization(node, config) {
     var blip = select(this);
 
     // blip link
-    console.log(`${d}:${d.active}:${d.hasOwnProperty("link")}`)
     if (!config.print_layout && d.active && d.hasOwnProperty("link")) {
       blip = blip.append("a")
         .attr("xlink:href", d.link);

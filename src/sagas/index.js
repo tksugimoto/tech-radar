@@ -10,10 +10,11 @@ function *radarLoaded(action) {
   yield put(Actions.setRadar({ entries: res.data }))
 }
 
-function * fetchEntries(action) {
+function *changeEntries(action) {
+  yield put(Actions.setUpdated({}))
 }
 
 export default function *rootSaga() {
   yield takeLatest('UI_RADAR_LOADED', radarLoaded)
-  yield takeLatest('SYS_FETCH_ENTRIES', fetchEntries)
+  yield takeLatest('UI_CHANGE_ENTRIES', changeEntries)
 }

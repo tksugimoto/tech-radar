@@ -12,7 +12,7 @@ class EntryTable extends React.Component {
       entries,
       quadrants,
       rings,
-      onChangeCellValue
+      onAfterChangeEntryTable
     } = this.props
     return (
       <Wrapper>
@@ -40,6 +40,11 @@ class EntryTable extends React.Component {
                       ],
                       allowInsertColumn: true,
                       minSpareRows: 1,
+                      onAfterChange: changes => {
+                        if (changes) {
+                          setTimeout(() => onAfterChangeEntryTable(changes), 50)
+                        }
+                      },
                     }
           }/>
       </Wrapper>

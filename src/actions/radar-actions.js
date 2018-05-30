@@ -7,4 +7,5 @@ export default createActions(
   'SYS_FETCH_ENTRIES',
 
   'SET_RADAR',
+  'SET_UPDATED',
 )
