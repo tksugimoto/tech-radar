@@ -3,11 +3,12 @@ import {
   put
 } from 'redux-saga/effects'
 import axios from 'axios'
+import pick from 'lodash/pick'
 import Actions from '../actions/radar-actions'
 
 function *radarLoaded(action) {
   const res = yield axios.get(action.payload.url)
-  yield put(Actions.setRadar({ entries: res.data }))
+  yield put(Actions.setRadar(pick(res.data, ['entries', 'quadrants', 'rings', 'title'])))
 }
 
 function *changeEntries(action) {

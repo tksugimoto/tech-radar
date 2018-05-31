@@ -11,6 +11,7 @@ const connector = connect(
   ({ radar }) => radar,
   dispatch => ({
     onAfterChangeEntryTable: (changes) => dispatch(Actions.uiChangeEntries({})),
+    onPressCopyButton: () => {},
   })
 )
 export default connector(TechRadarEditPage)

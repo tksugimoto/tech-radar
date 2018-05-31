@@ -32,6 +32,12 @@ class TechRadar extends React.Component {
 TechRadar.propTypes = {
 }
 
+TechRadar.defaultProps = {
+  width: 1450,
+  height: 1000,
+  print_layout: true
+}
+
 export default TechRadar
 
 function radar_visualization(node, config) {
@@ -216,8 +222,7 @@ function radar_visualization(node, config) {
 
   var svg = select(node)
     .style("background-color", config.colors.background)
-    .attr("width", config.width)
-    .attr("height", config.height);
+    .attr("viewBox", `0 0 ${config.width} ${config.height}`)
 
   var radar = svg.append("g");
   if ("zoomed_quadrant" in config) {
