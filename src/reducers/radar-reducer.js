@@ -53,10 +53,10 @@ const initialState = {
   },
   title: 'Tech Radar',
   quadrants: [
+    { name: "Languages&Frameworks" },
+    { name: "Platforms" },
     { name: "Techniques" },
     { name: "Tools" },
-    { name: "Platforms" },
-    { name: "Languages&Frameworks" }
   ],
   rings: [
     { name: "ADOPT", color: "#93c47d" },

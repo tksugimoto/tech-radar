@@ -50,7 +50,9 @@ class JsonViewer extends React.Component {
           <CopyButton onPressCopyButton={onPressCopyButton}
                       textElement={this.el}/>
         </CopyButtonWrapper>
-        <TextArea id="json-viewer" readonly="readonly">{JSON.stringify({ entries, quadrants, rings, title } , null, 2)}</TextArea>
+        <TextArea id="json-viewer"
+                  readOnly={true}
+                  value={JSON.stringify({ entries, quadrants, rings, title } , null, 2)} />
       </Wrapper>
     )
   }
