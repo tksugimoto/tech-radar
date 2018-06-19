@@ -38,12 +38,12 @@ class JsonViewer extends React.Component {
 
   render() {
     const {
-      entries,
       quadrants,
       rings,
       title,
       onPressCopyButton
     } = this.props
+    const entries = this.props.entries.filter(entry => entry.label && entry.quadrant && entry.ring)
     return (
       <Wrapper>
         <CopyButtonWrapper>
@@ -52,7 +52,7 @@ class JsonViewer extends React.Component {
         </CopyButtonWrapper>
         <TextArea id="json-viewer"
                   readOnly={true}
-                  value={JSON.stringify({ entries, quadrants, rings, title } , null, 2)} />
+                  value={JSON.stringify({entries, quadrants, rings, title } , null, 2)} />
       </Wrapper>
     )
   }

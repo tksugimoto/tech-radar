@@ -1,3 +1,4 @@
+/* global setTimeout */
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
@@ -40,6 +41,7 @@ class EntryTable extends React.Component {
                       ],
                       allowInsertColumn: true,
                       minSpareRows: 1,
+                      contextMenu: ['remove_row'],
                       onAfterChange: changes => {
                         if (changes) {
                           setTimeout(() => onAfterChangeEntryTable(changes), 50)
@@ -57,6 +59,7 @@ EntryTable.propTypes = {
   quadrants: PropTypes.array,
   rings: PropTypes.array,
   onChangeCellValue: PropTypes.func,
+  onAfterChangeEntryTable: PropTypes.func,
 }
 
 export default EntryTable
