@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  tech-radar:
+    build:
+      context: ./
+      args:
+      - http_proxy
+      - https_proxy
+    ports:
+      - "127.0.0.1:3000:3000"
+    tty: true
+    restart: always
